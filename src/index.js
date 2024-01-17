@@ -1,7 +1,15 @@
 import connectDB from "./db/db_conn.js";
 import "dotenv/config.js";
+import app from "./app.js";
 
-connectDB();
+const Port = process.env.PORT || 8000;
+connectDB()
+  .then(() => {
+    app.listen(Port, () => {
+      console.log(`Server is running ${Port}`);
+    });
+  })
+  .catch((err) => console.log(err));
 
 // async function connectDB() {}
 
