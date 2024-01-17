@@ -1,15 +1,11 @@
-// require("dotenv").config({ path: "./env" });
-
 import connectDB from "./db/db_conn.js";
-import dotenv from "dotenv";
-dotenv.config({
-  path: "./env",
-});
+import "dotenv/config.js";
+
 connectDB();
 
 // async function connectDB() {}
 
-/*
+/* code for practice
 (async () => {
   try {
     await mongoose.connect(`${process.env.MONGODB_URI}`/${DB_NAME});
